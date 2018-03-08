@@ -51,7 +51,7 @@ public class TodoServiceTest {
         boolean result = this.todoService.saveTodo("todo1", TodoPriority.MEDIUM);
         Assert.assertThat(result, org.hamcrest.Matchers.equalTo(true));
 
-        //Beri tau kalau store dengan param "todo1" itu diperlukan ke Mockito.verifyNoMoreInteractions(this.todoRepository); (line 41)
+        //Beri tau kalau function store dengan param "todo1" itu diperlukan ke Mockito.verifyNoMoreInteractions(this.todoRepository); (line 41)
         Mockito.verify(this.todoRepository).store((new Todo("todo1", TodoPriority.MEDIUM)));
     }
 
@@ -64,6 +64,7 @@ public class TodoServiceTest {
         boolean result = this.todoService.saveTodo("wrong-data", TodoPriority.MEDIUM);
         Assert.assertThat(result, org.hamcrest.Matchers.equalTo(false));
 
+        //Beri tau kalau function store dengan param "wrong-data" itu diperlukan ke Mockito.verifyNoMoreInteractions(this.todoRepository); (line 41)
         Mockito.verify(this.todoRepository).store((new Todo("wrong-data", TodoPriority.MEDIUM)));
     }
 

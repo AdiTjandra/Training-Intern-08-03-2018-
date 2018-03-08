@@ -25,11 +25,11 @@ public class TodoService {
   }
 
   public List<Todo> getAll() {
-//    return todoRepository.getAll();
+    return todoRepository.getAll();
 
-//    Bisa pass juga krna dipanggil fungsi dan return type nya benar
-    List<Todo> a = this.todoRepository.getAll();
-    return new ArrayList<Todo>();
+//    //Bisa pass juga krna dipanggil fungsi dan return type nya benar
+//    List<Todo> a = this.todoRepository.getAll();
+//    return new ArrayList<Todo>();
 
   }
 
