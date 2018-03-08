@@ -20,6 +20,12 @@ public class TodoRepository {
     return true;
   }
 
+  public void deleteAll()
+  {
+
+  }
+
+
   public List<Todo> getAll() {
     return new ArrayList<Todo>(todos);
   }

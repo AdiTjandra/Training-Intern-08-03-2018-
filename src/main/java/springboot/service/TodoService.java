@@ -1,4 +1,4 @@
-package springboot.service;
+    package springboot.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,6 +6,7 @@ import springboot.model.Todo;
 import springboot.model.constants.TodoPriority;
 import springboot.repository.TodoRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,12 +20,17 @@ public class TodoService {
 
   public boolean saveTodo(String name, TodoPriority priority) {
     Todo todo = new Todo(name, priority);
-
+//  todoRepository.deleteAll();
     return todoRepository.store(todo);
   }
 
   public List<Todo> getAll() {
-    return todoRepository.getAll();
+//    return todoRepository.getAll();
+
+//    Bisa pass juga krna dipanggil fungsi dan return type nya benar
+    List<Todo> a = this.todoRepository.getAll();
+    return new ArrayList<Todo>();
+
   }
 
 }
